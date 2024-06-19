@@ -1,0 +1,48 @@
+     
+     
+    ____________   _____  __   _____ 
+    | ___ \ ___ \ |  _  |/  | |  _  |
+    | |_/ / |_/ / | |/' |`| |  \ V / 
+    |    /|    /  |  /| | | |  / _ \ 
+    | |\ \| |\ \  \ |_/ /_| |_| |_| |
+    \_| \_\_| \_|  \___/ \___/\_____/
+                                 
+                                 
+                                 
+
+  body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa; /* Background untuk halaman */
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      background-color: #343a40; /* Warna background navbar */
+    }
+
+    .navbar-brand {
+      font-weight: bold; /* Font tebal untuk brand */
+      color: #ffffff !important; /* Warna teks brand */
+    }
+
+    .navbar-toggler {
+      border: none; /* Hapus border default pada toggler */
+    }
+    .form-group {
+      margin-bottom: 1rem; /* Margin bawah untuk setiap form group */
+    }
+
+    .conversion-table {
+      margin-top: 1rem;
+      width: 100%;
+      max-width: 600px;
+      overflow-x: auto; /* Jika tabel melebihi lebar maksimum, bisa di-scroll horizontal */
+    }
+
+    .conversion-table th, .conversion-table td {
+      padding: 0.75rem;
+      text-align: center;
+      white-space: nowrap; /* Agar teks dalam cell tidak wrap */
+    }

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Converter</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="style.css" rel="stylesheet" type="text/css">
+        <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <meta name="author" content="RR018">
+      <meta name="description" content="TEXT CONVERTER">
+      <meta property="og:type" content="Website" />
+      <meta property="og:site_name" content="RR018">
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Text Converter</a>
+
+
+    <button class="navbar-toggler" type="button" id="theme-toggle">
+      <span id="theme-icon" role="img" aria-label="Tema Terang">☀️</span>
+    </button>
+  </div>
+</nav>
+
+
+<div class="container mt-4">
+  <div class="card text-center">
+    <div class="card-body">
+     <!-- dropdwon -->
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Convert Text
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#" onclick="showTextToBinary()">Text to Binary</a></li>
+          <li><a class="dropdown-item" href="#" onclick="showTextToOctal()">Text to Octal</a></li>
+          <li><a class="dropdown-item" href="#" onclick="showTextToDecimal()">Text to Decimal</a></li>
+          <li><a class="dropdown-item" href="#" onclick="showTextToHexadecimal()">Text to Hexadecimal</a></li>
+        </ul>
+      </div>
+
+      <!-- Text to Binary -->
+      <div id="textToBinary" style="display: none;">
+        <h2 class="mb-4">Text to Binary</h2>
+        <div class="form-group row">
+          <div class="col">
+            <input type="text" class="form-control" id="textInputBinary" placeholder="Enter text...">
+          </div>
+          <div class="col-auto">
+            <button type="button" class="btn btn-secondary" onclick="pasteText('textInputBinary')">Paste</button>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary mt-2" onclick="convertTextToBinary()">Convert</button>
+        <div class="conversion-table mt-4">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="min-width: 150px;">Text</th>
+                <th>Binary</th>
+              </tr>
+            </thead>
+            <tbody id="binaryResult">
+              <!-- Hasil konversi akan ditampilkan di sini -->
+            </tbody>
+          </table>
+        </div>
+        <div class="form-group mt-3">
+          <label for="binaryOutput">Binary Output:</label>
+          <textarea class="form-control" id="binaryOutput" rows="3" readonly></textarea>
+          <div class="mt-2">
+            <button type="button" class="btn btn-primary" onclick="copyBinaryOutput()">Copy Text</button>
+            <button type="button" class="btn btn-danger ms-2" onclick="deleteBinaryOutput()">Delete Text</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text to Octal -->
+      <div id="textToOctal" style="display: none;">
+        <h2 class="mb-4">Text to Octal</h2>
+        <div class="form-group row">
+          <div class="col">
+            <input type="text" class="form-control" id="textInputOctal" placeholder="Enter text...">
+          </div>
+          <div class="col-auto">
+            <button type="button" class="btn btn-secondary" onclick="pasteText('textInputOctal')">Paste</button>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary mt-2" onclick="convertTextToOctal()">Convert</button>
+        <div class="conversion-table mt-4">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="min-width: 150px;">Text</th>
+                <th>Octal</th>
+              </tr>
+            </thead>
+            <tbody id="octalResult">
+              <!-- Hasil konversi akan ditampilkan di sini -->
+            </tbody>
+          </table>
+        </div>
+        <div class="form-group mt-3">
+          <label for="octalOutput">Octal Output:</label>
+          <textarea class="form-control" id="octalOutput" rows="3" readonly></textarea>
+          <div class="mt-2">
+            <button type="button" class="btn btn-primary" onclick="copyOctalOutput()">Copy Text</button>
+            <button type="button" class="btn btn-danger ms-2" onclick="deleteOctalOutput()">Delete Text</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text to Decimal -->
+      <div id="textToDecimal" style="display: none;">
+        <h2 class="mb-4">Text to Decimal</h2>
+        <div class="form-group row">
+          <div class="col">
+            <input type="text" class="form-control" id="textInputDecimal" placeholder="Enter text...">
+          </div>
+          <div class="col-auto">
+            <button type="button" class="btn btn-secondary" onclick="pasteText('textInputDecimal')">Paste</button>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary mt-2" onclick="convertTextToDecimal()">Convert</button>
+        <div class="conversion-table mt-4">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="min-width: 150px;">Text</th>
+                <th>Decimal</th>
+              </tr>
+            </thead>
+            <tbody id="decimalResult">
+              <!-- Hasil konversi akan ditampilkan di sini -->
+            </tbody>
+          </table>
+        </div>
+        <div class="form-group mt-3">
+          <label for="decimalOutput">Decimal Output:</label>
+          <textarea class="form-control" id="decimalOutput" rows="3" readonly></textarea>
+          <div class="mt-2">
+            <button type="button" class="btn btn-primary" onclick="copyDecimalOutput()">Copy Text</button>
+            <button type="button" class="btn btn-danger ms-2" onclick="deleteDecimalOutput()">Delete Text</button>
+          </div>
+        </div>
+      </div>
+
+      <!--  Text to Hexadecimal -->
+      <div id="textToHexadecimal" style="display: none;">
+        <h2 class="mb-4">Text to Hexadecimal</h2>
+        <div class="form-group row">
+          <div class="col">
+            <input type="text" class="form-control" id="textInputHexadecimal" placeholder="Enter text...">
+          </div>
+          <div class="col-auto">
+            <button type="button" class="btn btn-secondary" onclick="pasteText('textInputHexadecimal')">Paste</button>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary mt-2" onclick="convertTextToHexadecimal()">Convert</button>
+<div class="conversion-table mt-4">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th style="min-width: 150px;">Text</th>
+        <th>Hexadecimal</th>
+      </tr>
+    </thead>
+    <tbody id="hexadecimalResult">
+      <!-- Hasil konversi akan ditampilkan di sini -->
+    </tbody>
+  </table>
+</div>
+<div class="form-group mt-3">
+  <label for="hexadecimalOutput">Hexadecimal Output:</label>
+  <textarea class="form-control" id="hexadecimalOutput" rows="3" readonly></textarea>
+  <div class="mt-2">
+    <button type="button" class="btn btn-primary" onclick="copyHexadecimalOutput()">Copy Text</button>
+    <button type="button" class="btn btn-danger ms-2" onclick="deleteHexadecimalOutput()">Delete Text</button>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<!--- Javascript -->
+<script src="java.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
