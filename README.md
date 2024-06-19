@@ -1,11 +1,12 @@
 
 ```
-Alat Konversi Teks
+        Alat Konversi Teks.
 Selamat datang di Alat Konversi Teks, 
 sebuah aplikasi web serbaguna dan ramah pengguna yang dirancang untuk mengubah
  teks Anda ke berbagai format numerik termasuk Biner, Desimal, Oktal, dan Heksadesimal.
  Baik Anda seorang pengembang, pelajar, atau penghobi, alat ini memudahkan proses pengkodean dan dekode
  teks untuk berbagai aplikasi.
+
 Fitur:
        Konversi Teks ke Biner: Mudah mengonversi teks apa pun menjadi kode biner,
          sempurna untuk memahami prinsip dasar ilmu komputer atau untuk digunakan dalam tugas pemrograman tingkat rendah.
